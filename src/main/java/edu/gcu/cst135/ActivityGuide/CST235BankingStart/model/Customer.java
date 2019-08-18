@@ -70,10 +70,10 @@ public class Customer {
 	/**
 	 * Customer method. Creates initial values of $2,000
 	 * 
-	 * @param firstName
-	 * @param lastName
-	 * @param userName
-	 * @param passWord
+	 * @param firstName Customer First Name
+	 * @param lastName Customer Last Name
+	 * @param userName User created user name
+	 * @param passWord User created password
 	 */
 	public Customer(String firstName, String lastName, String userName, String passWord) {
 		super();

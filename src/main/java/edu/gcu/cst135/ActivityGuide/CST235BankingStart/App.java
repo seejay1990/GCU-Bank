@@ -4,6 +4,10 @@ import edu.gcu.cst135.ActivityGuide.CST235BankingStart.controller.Bank;
 
 import edu.gcu.cst135.ActivityGuide.CST235BankingStart.model.DatabaseBank;
 
+/** Banking Application
+ * @author Charles R. Edwards Jr.
+ *
+ */
 public class App {
 	// Starting point for banking application
 	public static void main(String[] args) {

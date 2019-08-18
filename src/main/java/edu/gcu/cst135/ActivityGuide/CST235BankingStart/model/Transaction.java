@@ -9,6 +9,11 @@ public class Transaction {
 	private Date date;
 	private String description;
 	
+	/** Method that pulls current account transactions to be put in the transactions list.
+	 * @param acctNumber Records current account transaction is happening
+	 * @param amount Records the amount of deposit/withdrawal
+	 * @param description Details the type of account the transaction came from.
+	 */
 	Transaction (String acctNumber, double amount, String description){
 		this.acctNumber = acctNumber;
 		this.amount = amount;

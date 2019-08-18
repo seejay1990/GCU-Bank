@@ -21,6 +21,10 @@ public class Saving extends Account{
 	
 	List<Transaction> trans = new ArrayList<>();
 	
+	/** Savings Account
+	 * @param account Savings account number
+	 * @param amount Current Savings balance
+	 */
 	public Saving(String account, double amount) {
 		super(account, amount);
 		this.setMinBalance(250.00);
@@ -61,7 +65,7 @@ public class Saving extends Account{
 	public String toString() {
 		return super.getAccountNumber() + "  " + super.getAccountBalance();
 	}
-
+	//Getters/Setters
 	public double getMinBalance() {
 		return minBalance;
 	}

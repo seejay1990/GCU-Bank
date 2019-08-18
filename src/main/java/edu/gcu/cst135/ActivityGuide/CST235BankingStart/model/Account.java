@@ -5,11 +5,10 @@ import edu.gcu.cst135.ActivityGuide.CST235BankingStart.controller.iTrans;
 public abstract class Account implements iTrans {
 	private String accountNumber;
 	private double accountBalance;
-	
-	
-	//Getters / Setters
+
+	// Getters / Setters
 	public abstract void doEndOfMonth();
-	
+
 	public String getAccountNumber() {
 		return accountNumber;
 	}
@@ -25,11 +24,12 @@ public abstract class Account implements iTrans {
 	public void setAccountBalance(double accountBalance) {
 		this.accountBalance = accountBalance;
 	}
+
 	
-	public void doCredit(double amt) {			
+	public void doCredit(double amt) {
 		this.setAccountBalance(this.getAccountBalance() - amt);
 	}
-	
+
 	public void doDebit(double amt) {
 		this.setAccountBalance(this.getAccountBalance() + amt);
 	}
@@ -38,8 +38,15 @@ public abstract class Account implements iTrans {
 		return accountNumber + " $" + accountBalance;
 	}
 
+	/**
+	 * Account method that calls the current account type/balance called in each
+	 * Account class
+	 * 
+	 * @param accountNumber  displays account associated with the class called in
+	 * @param accountBalance Current balance of associated account
+	 */
 	public Account(String accountNumber, double accountBalance) {
-		
+
 		this.accountNumber = accountNumber;
 		this.accountBalance = accountBalance;
 	}

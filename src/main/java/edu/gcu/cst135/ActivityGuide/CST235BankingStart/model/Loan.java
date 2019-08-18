@@ -15,12 +15,17 @@ public class Loan extends Account {
 	
 	List<Transaction> trans = new ArrayList<>();
 	
+	/** Loan Account
+	 * @param account Loan Account Number
+	 * @param amount Current Loan Amount
+	 */
 	public Loan(String account, double amount) {
 		super(account, amount);
 		this.lateFee =25.00;
 		this.intRate = .02;
 	}
 
+	
 	public void doCredit(double amt) {
 		this.setAccountBalance(this.getAccountBalance() - amt);
 		isPaid = true;
@@ -44,6 +49,7 @@ public class Loan extends Account {
 		return super.getAccountNumber() + "  " + super.getAccountBalance();
 	}
 
+	
 	@Override
 	public void addTransaction(double amount, String description) {
 		trans.add(new Transaction(this.getAccountNumber(), amount, description));

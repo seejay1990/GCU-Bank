@@ -30,8 +30,7 @@ public class Bank {
 	}
 
 	// Starting point
-	
-	
+
 	public void start() {
 		int option;
 		// Keep going until they select a valid option
@@ -42,8 +41,10 @@ public class Bank {
 	}
 
 	// Process what menu item the user picked
-	
-	/** Customer menu logic
+
+	/**
+	 * Customer menu logic
+	 * 
 	 * @param option
 	 */
 	private void processCustMenu(int option) {
@@ -60,8 +61,7 @@ public class Bank {
 	}
 
 	// Create a customer and add to the customers list on the DB
-	
-	
+
 	private void createCustomer() {
 
 		String firstName = Menus.userStrInput("Enter the customer's first name: ").toUpperCase();
@@ -191,7 +191,8 @@ public class Bank {
 
 	// Display and process savings withdraw
 	public void viewWithdrawalSavings() {
-		customers.get(currentCustomer).getSaving().doCredit(Menus.userDblInput("Enter an amount to withdraw from savings?"));
+		customers.get(currentCustomer).getSaving()
+				.doCredit(Menus.userDblInput("Enter an amount to withdraw from savings?"));
 	}
 
 	// Display and process checking withdraw
