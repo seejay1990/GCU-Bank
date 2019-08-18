@@ -6,6 +6,8 @@ public abstract class Account implements iTrans {
 	private String accountNumber;
 	private double accountBalance;
 	
+	
+	//Getters / Setters
 	public abstract void doEndOfMonth();
 	
 	public String getAccountNumber() {

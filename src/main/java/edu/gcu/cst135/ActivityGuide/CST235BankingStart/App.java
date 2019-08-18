@@ -9,6 +9,8 @@ public class App {
 	public static void main(String[] args) {
 		// Create an object and set the name
 		Bank bank = new Bank("Grand Canyon Credit Union");
+		
+		//Database connection
 		DatabaseBank db = new DatabaseBank();
 
 

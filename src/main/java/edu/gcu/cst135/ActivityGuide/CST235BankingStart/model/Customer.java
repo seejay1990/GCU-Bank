@@ -9,7 +9,8 @@ public class Customer {
 	private Checking checking;
 	private Saving saving;
 	private Loan loan;
-	
+
+	// Getters/Setters
 	public String getFirstName() {
 		return firstName;
 	}
@@ -49,6 +50,7 @@ public class Customer {
 	public void setLoan(Loan loan) {
 		this.loan = loan;
 	}
+
 	public String getUserName() {
 		return userName;
 	}
@@ -65,8 +67,15 @@ public class Customer {
 		this.passWord = passWord;
 	}
 
+	/**
+	 * Customer method. Creates initial values of $2,000
+	 * 
+	 * @param firstName
+	 * @param lastName
+	 * @param userName
+	 * @param passWord
+	 */
 	public Customer(String firstName, String lastName, String userName, String passWord) {
-		// CST235 TASK: CUSTOMER INFORMATION MUST BE STORED IN A DB
 		super();
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -76,17 +85,17 @@ public class Customer {
 		saving = new Saving(generateAcct('S'), 2000);
 		loan = new Loan(generateAcct('L'), 2000);
 	}
-	
+
 	private String generateAcct(char type) {
 		String acct = "0";
 		for (int x = 0; x < 9; x++) {
-			acct += (int) (Math.random()* 9) + 1;
+			acct += (int) (Math.random() * 9) + 1;
 		}
 		return acct + type;
 	}
-	
+
 	public String toString() {
 		return firstName + " " + lastName;
 	}
-	
+
 }

@@ -3,7 +3,9 @@ package edu.gcu.cst135.ActivityGuide.CST235BankingStart.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.gcu.cst135.ActivityGuide.CST235BankingStart.controller.Bank;
 import edu.gcu.cst135.ActivityGuide.CST235BankingStart.view.Menus;
+
 
 public class Loan extends Account {
 
@@ -26,8 +28,16 @@ public class Loan extends Account {
 	}
 	
 	public void doDebit(double amt) {
-		this.setAccountBalance(this.getAccountBalance() + amt);
-		addTransaction(amt, "Loan Withdrawal");
+		Bank loan = new Bank("");
+		
+		if(amt <= -1 ) {
+			System.out.println("Unable to process negative deposit!\nPlease Try Again\n");
+			loan.viewLoanPayment();
+		}else {
+			this.setAccountBalance(this.getAccountBalance() + amt);
+			addTransaction(amt, "Loan Withdrawal");
+		}
+		
 	}
 	
 	public String toString() {

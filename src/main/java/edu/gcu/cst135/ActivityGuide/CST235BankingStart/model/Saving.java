@@ -3,8 +3,17 @@ package edu.gcu.cst135.ActivityGuide.CST235BankingStart.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import edu.gcu.cst135.ActivityGuide.CST235BankingStart.controller.Bank;
 import edu.gcu.cst135.ActivityGuide.CST235BankingStart.view.Menus;
 
+/**
+ * @author Charles R. Edwards Jr.
+ *
+ */
+/**
+ * @author Charles R. Edwards Jr.
+ *
+ */
 public class Saving extends Account{
 	
 	private double minBalance;
@@ -19,13 +28,34 @@ public class Saving extends Account{
 	}
 	
 	public void doCredit(double amt) {
-		this.setAccountBalance(this.getAccountBalance() - amt);
-		addTransaction(amt, "Savings Withdrawal");
+		Bank wtdAgain = new Bank("");
+		
+		
+		if(amt > this.getAccountBalance()) {
+			System.out.println("Unable to withdraw more than current Savings Account balance.\nPlease Try Again");
+			System.out.println("Current Savings Balance ==> " + this.getAccountBalance() +"\n");
+			wtdAgain.viewWithdrawalSavings();
+		}else if(amt <= -1) {
+			System.out.println("Unable to withdraw a negative entry!\nPlease Try Again\n");
+			wtdAgain.viewWithdrawalSavings();
+		} else {
+			this.setAccountBalance(this.getAccountBalance() - amt);
+			addTransaction(amt, "Savings Withdrawal");
+		}
+		
 	}
 	
 	public void doDebit(double amt) {
-		this.setAccountBalance(this.getAccountBalance() + amt);
-		addTransaction(amt, "Savings Deposit");
+		Bank deptAgain = new Bank("");
+		
+		if(amt <= -1 ) {
+			System.out.println("Unable to process negative deposit!\nPlease Try Again\n");
+			deptAgain.viewDepositSavings();
+		}else {
+			this.setAccountBalance(this.getAccountBalance() + amt);
+			addTransaction(amt, "Savings Deposit");
+		}
+		
 	}
 	
 	public String toString() {
